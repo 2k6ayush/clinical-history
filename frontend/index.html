@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medi Record AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MediRecord AI</h1>
+  <div>
+    <button id="record-btn">Start Recording</button>
+    <button id="stop-btn" disabled>Stop</button>
+    <audio id="audio" controls></audio>
+  </div>
+  <div>
+    <h2>Transcript</h2>
+    <textarea id="transcript" rows="12" cols="80"></textarea>
+    <button id="extract-btn">Generate Clinical Notes</button>
+  </div>
+  <div>
+    <h2>Clinical Notes</h2>
+    <pre id="notes"></pre>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
