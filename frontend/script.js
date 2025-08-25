@@ -22,7 +22,7 @@ document.getElementById('stop-btn').onclick = () => {
         const formData = new FormData();
         formData.append('file', audioBlob, 'audio.webm');
         const res = await fetch('http://localhost:8000/transcribe/', { method: 'POST', body: formData });
-        const data = await res.json();
+        const data = await res.json(); // Ensure this line is present to parse the JSON response
         document.getElementById('transcript').value = data.transcript;
     };
     document.getElementById('record-btn').disabled = false;
@@ -34,6 +34,6 @@ document.getElementById('extract-btn').onclick = async () => {
     const formData = new FormData();
     formData.append('transcript', transcript);
     const res = await fetch('http://localhost:8000/extract/', { method: 'POST', body: formData });
-    const data = await res.json();
+    const data = await res.json(); // Ensure this line is present to parse the JSON response
     document.getElementById('notes').innerText = JSON.stringify(data, null, 2);
 };
